@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Envía SMS o WhatsApp</title>
+</head>
+<body>
+  <h1>Envía un mensaje de consejo</h1>
+  <form id="messageForm">
+    <label>Número de teléfono:</label>
+    <input type="tel" id="phoneNumber" required><br><br>
+    <button type="button" onclick="sendAdvice()">Enviar consejo</button>
+  </form>
+
+  <script>
+    async function sendAdvice() {
+      const phoneNumber = document.getElementById("phoneNumber").value;
+
+      // Aseguramos que el número esté bien formateado con el prefijo +57
+      const fullPhoneNumber = "+57" + phoneNumber;
+
+      const response = await fetch("http://localhost:3000/send-advice", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ phoneNumber: fullPhoneNumber })
+      });
+
+      const result = await response.json();
+      alert(result.message);
+    }
+  </script>
+</body>
+</html>
