@@ -19,7 +19,7 @@
       // Aseguramos que el número esté bien formateado con el prefijo +57
       const fullPhoneNumber = "+57" + phoneNumber;
 
-      const response = await fetch("http://localhost:3000/send-advice", {
+      const response = await fetch("http://localhost:3001/send-advice", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ phoneNumber: fullPhoneNumber })
