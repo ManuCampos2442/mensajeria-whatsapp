@@ -1,19 +1,23 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const twilio = require("twilio");
-const cors = require("cors");  // Importamos cors
+const cors = require("cors");
 require("dotenv").config();
-
-console.log("Twilio Account SID:", process.env.TWILIO_ACCOUNT_SID);
-console.log("Twilio Auth Token:", process.env.TWILIO_AUTH_TOKEN);
-console.log("Twilio Phone Number:", process.env.TWILIO_PHONE_NUMBER);
-
+const path = require("path");
 
 const app = express();
 app.use(bodyParser.json());
 
-// Habilitamos CORS para aceptar solicitudes desde cualquier origen
-app.use(cors());  // Esto permite solicitudes desde cualquier dominio
+// Habilitar CORS
+app.use(cors());
+
+// Configurar ruta estática para servir archivos desde la carpeta "public"
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Ruta para servir el archivo index.html
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
 
 // Configura Twilio
 const client = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
