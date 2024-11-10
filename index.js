@@ -27,10 +27,10 @@ let phoneNumbers = [];
 
 // Lista de consejos
 const adviceList = [
-  "Recuerda que cada día es una oportunidad para aprender algo nuevo. ¡Nunca dejes de esforzarte!",
-  "Los errores son lecciones en disfraz. Aprende de ellos y sigue adelante.",
-  "La perseverancia es la clave para lograr tus metas. ¡No te rindas!",
-  "Dedica tiempo a lo que realmente te apasiona, y el éxito llegará."
+  "Si sientes que tu hijo llora con mucha facilidad, intenta validar sus emociones diciéndole que es normal sentirse así. Luego, ofrécele un abrazo o una actividad tranquila para calmarse.",
+  "¿Tu hijo se frustra rápido al hacer una tarea difícil? Aliéntalo diciéndole que es normal sentirse desafiado y recuérdale que con práctica puede mejorar. La paciencia es clave en el aprendizaje.",
+  "Hoy intenta dedicar cinco minutos a una conversación plena con tu hijo, sin distracciones. Este tiempo exclusivo ayuda a fortalecer su autoestima y a sentirse valorado.",
+  "Si notas que tu hijo prefiere evitar ciertos alimentos, ofrece opciones similares pero en diferentes formas o texturas. A veces, probar en un nuevo formato puede hacer toda la diferencia."
 ];
 
 // Ruta para enviar un mensaje de consejo
