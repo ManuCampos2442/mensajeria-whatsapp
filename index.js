@@ -4,6 +4,11 @@ const twilio = require("twilio");
 const cors = require("cors");  // Importamos cors
 require("dotenv").config();
 
+console.log("Twilio Account SID:", process.env.TWILIO_ACCOUNT_SID);
+console.log("Twilio Auth Token:", process.env.TWILIO_AUTH_TOKEN);
+console.log("Twilio Phone Number:", process.env.TWILIO_PHONE_NUMBER);
+
+
 const app = express();
 app.use(bodyParser.json());
 
