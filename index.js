@@ -51,9 +51,10 @@ app.post("/send-advice", async (req, res) => {
       body: randomAdvice,
       to: `whatsapp:${phoneNumber}`
     });
-
+    console.log(res.status)
     res.status(200).send({ success: true, message: "Mensaje de consejo enviado", adviceMessage });
   } catch (error) {
+    console.log(res.status)
     res.status(500).send({ success: false, error: error.message });
   }
 });
